@@ -1,3 +1,1 @@
-We can do a toggle for caps colour, make the state say 12/13 instead of true false and use the getBackgroundColor function
-
-For the text in each button, if we call a function for to display text, check if caps is on, return either full caps or return same string
+Possible new self designed layout
