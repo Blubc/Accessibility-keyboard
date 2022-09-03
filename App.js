@@ -191,33 +191,24 @@ function OptimalT9() {
              </View>
              {/* Row 4 */}
             <View style={styles.rows}>
-             <MultiTap onSingleTap={() => toggleCapsState()}
-                      onLongPress={() => buttonPressed("mode")}
-                      delay={50}
-                      style = {[styles.buttonDesign, {backgroundColor: getBackgroundColor(capsValue)}]}>
+              <TouchableOpacity onPress={() => toggleCapsState()} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
                <View style={styles.buttonRows}>
                  <Text style={styles.buttonText}>Caps</Text>
-                 <Text style={[styles.buttonText, {fontSize: 20}]}>Mode</Text>
+                 <Text style={[styles.buttonText, {fontSize: 20}]}>mode</Text>
                </View>
-             </MultiTap>
-             <MultiTap onSingleTap={() => buttonPressed(" ")}
-                       onLongPress={() => buttonPressed(0)}
-                       delay={50}
-                       style = {[styles.buttonDesign,{flex:2, alignItems:'left'}]}>
+              </TouchableOpacity>
+             <TouchableOpacity onPress={() => buttonPressed(" ")} onLongPress={() => buttonPressed(0)} style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
               <View style={styles.buttonRows}>
-                <Text style={[styles.buttonText,{marginLeft: 40}]}>0   ␣</Text>
+                <Text style={[styles.buttonText,{marginLeft: 10, padding:10}]}>0   ␣</Text>
               </View>
-             </MultiTap>
-             <MultiTap onSingleTap={() => buttonPressed("back")}
-                       onLongPress={() => buttonPressed("delAll")}
-                       delay={50}
-                       style = {styles.buttonDesign}>
+             </TouchableOpacity>
+             <TouchableOpacity onPress={() => {buttonPressed("back"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} onLongPress={() => {buttonPressed("delAll"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
               <View style={styles.buttonRows}>
                 <Text style={styles.buttonText}>⌫</Text>
               </View>
-             </MultiTap>
+             </TouchableOpacity>
            </View>
-           <View style={styles.rows}>
+           <View style={[styles.rows, {marginTop:15}]}>
              <TouchableOpacity onPress={() => navigation.navigate('originalT9')} style={styles.switchButton}>
                <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>OriginalT9</Text>
              </TouchableOpacity>
@@ -226,6 +217,9 @@ function OptimalT9() {
              </TouchableOpacity>
              <TouchableOpacity onPress={() => navigation.navigate('swipeTap')} style={styles.switchButton}>
                <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>Swipe</Text>
+             </TouchableOpacity>
+             <TouchableOpacity onPress={() => navigation.navigate('twoTap')} style={styles.switchButton}>
+               <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>TwoTap</Text>
              </TouchableOpacity>
            </View>
           </ImageBackground>
@@ -412,34 +406,25 @@ function OriginalT9() {
              </View>
              {/* Row 4 */}
             <View style={styles.rows}>
-             <MultiTap onSingleTap={() => toggleCapsState()}
-                      onLongPress={() => buttonPressed("mode")}
-                      delay={50}
-                      style = {[styles.buttonDesign, {backgroundColor: getBackgroundColor(capsValue)}]}>
+              <TouchableOpacity onPress={() => toggleCapsState()} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
                <View style={styles.buttonRows}>
                  <Text style={styles.buttonText}>Caps</Text>
-                 <Text style={[styles.buttonText, {fontSize: 20}]}>Mode</Text>
+                 <Text style={[styles.buttonText, {fontSize: 20}]}>mode</Text>
                </View>
-             </MultiTap>
-             <MultiTap onSingleTap={() => buttonPressed(" ")}
-                       onLongPress={() => buttonPressed(0)}
-                       delay={50}
-                       style = {[styles.buttonDesign,{flex:2, alignItems:'left'}]}>
+              </TouchableOpacity>
+             <TouchableOpacity onPress={() => buttonPressed(" ")} onLongPress={() => buttonPressed(0)} style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
               <View style={styles.buttonRows}>
-                <Text style={[styles.buttonText,{marginLeft: 40}]}>0   ␣</Text>
+                <Text style={[styles.buttonText,{marginLeft: 10, padding:10}]}>0   ␣</Text>
               </View>
-             </MultiTap>
-             <MultiTap onSingleTap={() => buttonPressed("back")}
-                       onLongPress={() => buttonPressed("delAll")}
-                       delay={50}
-                       style = {styles.buttonDesign}>
+             </TouchableOpacity>
+             <TouchableOpacity onPress={() => {buttonPressed("back"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} onLongPress={() => {buttonPressed("delAll"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
               <View style={styles.buttonRows}>
                 <Text style={styles.buttonText}>⌫</Text>
               </View>
-             </MultiTap>
-
+             </TouchableOpacity>
            </View>
-           <View style={styles.rows}>
+
+           <View style={[styles.rows, {marginTop:15}]}>
              <TouchableOpacity onPress={() => navigation.navigate('optimalT9')} style={styles.switchButton}>
                <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>OptimalT9</Text>
              </TouchableOpacity>
@@ -448,6 +433,9 @@ function OriginalT9() {
              </TouchableOpacity>
              <TouchableOpacity onPress={() => navigation.navigate('swipeTap')} style={styles.switchButton}>
                <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>Swipe</Text>
+             </TouchableOpacity>
+             <TouchableOpacity onPress={() => navigation.navigate('twoTap')} style={styles.switchButton}>
+               <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>TwoTap</Text>
              </TouchableOpacity>
            </View>
           </ImageBackground>
@@ -621,31 +609,22 @@ function ThreeKey() {
         </View>
            {/* Row 4 */}
           <View style={styles.rows}>
-           <MultiTap onSingleTap={() => toggleCapsState()}
-                    delay={50}
-                    style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor:getBackgroundColor(capsValue)}]}>
+            <TouchableOpacity onPress={() => toggleCapsState()} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
              <View style={styles.buttonRows}>
                <Text style={styles.buttonText}>Caps</Text>
-               <Text style={[styles.buttonText, {fontSize:20}]}>mode</Text>
+               <Text style={[styles.buttonText, {fontSize: 20}]}>mode</Text>
              </View>
-           </MultiTap>
-           <MultiTap onSingleTap={() => buttonPressed(" ")}
-                     onLongPress={() => buttonPressed(0)}
-                     delay={50}
-                     style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
+            </TouchableOpacity>
+           <TouchableOpacity onPress={() => buttonPressed(" ")} onLongPress={() => buttonPressed(0)} style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
             <View style={styles.buttonRows}>
               <Text style={[styles.buttonText,{marginLeft: 10, padding:10}]}>0   ␣</Text>
             </View>
-           </MultiTap>
-           <MultiTap onSingleTap={() => buttonPressed("back")}
-                     onLongPress={() => buttonPressed("delAll")}
-                     delay={50}
-                     style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => {buttonPressed("back"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} onLongPress={() => {buttonPressed("delAll"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
             <View style={styles.buttonRows}>
               <Text style={styles.buttonText}>⌫</Text>
             </View>
-           </MultiTap>
-
+           </TouchableOpacity>
          </View>
          <View style={[styles.rows, {marginTop: 15, marginBottom: 15}]}>
            <TouchableOpacity onPress={() => movePosition("down")} style={[styles.buttonDesign, {backgroundColor:"pink", justifyContent:'center', alignItems:'center'}]}>
@@ -675,6 +654,9 @@ function ThreeKey() {
            </TouchableOpacity>
            <TouchableOpacity onPress={() => navigation.navigate('swipeTap')} style={styles.switchButton}>
              <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>Swipe</Text>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => navigation.navigate('twoTap')} style={styles.switchButton}>
+             <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>TwoTap</Text>
            </TouchableOpacity>
          </View>
         </ImageBackground>
@@ -885,30 +867,22 @@ function SwipeTap() {
             </MultiTap>
                {/* Row 4 */}
               <View style={[styles.rows, {marginBottom: 40}]}>
-                <MultiTap onSingleTap={() => toggleCapsState()}
-                          delay={50}
-                          style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
+                <TouchableOpacity onPress={() => toggleCapsState()} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
                  <View style={styles.buttonRows}>
                    <Text style={styles.buttonText}>Caps</Text>
                    <Text style={[styles.buttonText, {fontSize: 20}]}>mode</Text>
                  </View>
-                </MultiTap>
-               <MultiTap onSingleTap={() => buttonPressed(" ")}
-                         onLongPress={() => buttonPressed(0)}
-                         delay={50}
-                         style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
+                </TouchableOpacity>
+               <TouchableOpacity onPress={() => buttonPressed(" ")} onLongPress={() => buttonPressed(0)} style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
                 <View style={styles.buttonRows}>
                   <Text style={[styles.buttonText,{marginLeft: 10, padding:10}]}>0   ␣</Text>
                 </View>
-               </MultiTap>
-               <MultiTap onSingleTap={() => buttonPressed("back")}
-                         onLongPress={() => buttonPressed("delAll")}
-                         delay={50}
-                         style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
+               </TouchableOpacity>
+               <TouchableOpacity onPress={() => {buttonPressed("back"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} onLongPress={() => {buttonPressed("delAll"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
                 <View style={styles.buttonRows}>
                   <Text style={styles.buttonText}>⌫</Text>
                 </View>
-               </MultiTap>
+               </TouchableOpacity>
              </View>
 
              <View style={[styles.rows, {marginBottom: 20}]}>
@@ -921,12 +895,266 @@ function SwipeTap() {
                <TouchableOpacity onPress={() => navigation.navigate('threeKey')} style={styles.switchButton}>
                  <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>3-Key</Text>
                </TouchableOpacity>
+               <TouchableOpacity onPress={() => navigation.navigate('twoTap')} style={styles.switchButton}>
+                 <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>TwoTap</Text>
+               </TouchableOpacity>
              </View>
             </ImageBackground>
           </GestureRecognizer>
         </SafeAreaView>
 
       <StatusBar style="light-content" />
+    </View>
+  );
+}
+
+function TwoTap() {
+
+  const navigation = useNavigation();
+  const [memoryValue, setMemoryValue] = useState(0);
+  const [capsValue, setCapsValue] = useState(false);
+  const [answerValue, setAnswerValue] = useState("");
+  const [readyToReplace, setReadyToReplace] = useState(true);
+  const [screenViewState, setScreenViewState] = useState(0);
+
+  const keyValues = [['1','q','w','e','e'], ['2','r','t','y','u'], ['3','i','o','p','p'],
+                     ['4','a','s','s','s'], ['5','d','f','g','h'], ['6','j','k','l','l'],
+                     ['7','z','x','c','c'], ['8','v','b','n','n'], ['9','m','m','m','m']]
+
+
+  function getBackgroundColor(position){
+    let color;
+    if (typeof position === 'boolean'){
+      if (position === true) {
+        color = 'teal';
+      } else {
+        color = 'black';
+      }
+    }
+    return color;
+  }
+
+  function buttonPressed(value){
+    if(value == "back"){
+      setAnswerValue(answerValue.slice(0, -1));
+    }else if(value == "delAll"){
+      setAnswerValue("");
+    }else{
+      setAnswerValue(handleNumber(value));
+      setScreenViewState(0);
+    }
+  }
+
+  function handleNumber(handleInput){
+    if(capsValue == true && (typeof handleInput === 'string' || handleInput instanceof String)){
+      handledInput = handleInput.toUpperCase();
+    }else{
+      handledInput = handleInput;
+    }
+    if (readyToReplace == true){
+      setReadyToReplace(false);
+      return handledInput;
+    }else{
+      return (""+answerValue+handledInput);
+    }
+  }
+
+  function toggleCapsState(){
+    setCapsValue(!capsValue);
+  }
+
+  function characterDisplay(buttonString){
+    if (capsValue == true){
+      return(buttonString.toUpperCase());
+    }else{
+      return(buttonString);
+    }
+  }
+
+  function handleBody(keyPressed){
+    setScreenViewState(keyPressed);
+  }
+
+  const config = {
+      velocityThreshold: 0.3,
+      directionalOffsetThreshold: 80,
+  };
+
+  function twoTapBody(){
+    if (screenViewState == 0){
+      return(
+        <View style={{marginTop:10}}>
+          <View style={styles.rows}>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(1); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={styles.buttonText}>1 </Text>
+                 <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("q w e")}</Text>
+               </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(2); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={styles.buttonText}>2 </Text>
+                 <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("r t y u")}</Text>
+               </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(3); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={styles.buttonText}>3 </Text>
+                 <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("i o p")}</Text>
+               </View>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.rows}>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(4); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                <View style={styles.buttonRows}>
+                  <Text style={styles.buttonText}>4 </Text>
+                  <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("a s")}</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(5); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                <View style={styles.buttonRows}>
+                  <Text style={styles.buttonText}>5 </Text>
+                  <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("d f g h")}</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(6); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                <View style={styles.buttonRows}>
+                  <Text style={styles.buttonText}>6 </Text>
+                  <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("j k l")}</Text>
+                </View>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.rows}>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(7); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                 <View style={styles.buttonRows}>
+                   <Text style={styles.buttonText}>7 </Text>
+                   <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("z x c")}</Text>
+                 </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(8); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                 <View style={styles.buttonRows}>
+                   <Text style={styles.buttonText}>8 </Text>
+                   <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("v b n")}</Text>
+                 </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(9); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                 <View style={styles.buttonRows}>
+                   <Text style={styles.buttonText}>9 </Text>
+                   <Text style={[styles.buttonText, {fontSize: 25, marginBottom: 5}]}>{characterDisplay("m")}</Text>
+                 </View>
+              </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }else{
+      return(
+        <View style={{marginTop:10}} onPressIn={Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)}>
+          <View style={styles.rows}>
+              <TouchableOpacity style = {styles.buttonDesign}>
+                <View style={styles.buttonRows}>
+                  <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}></Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {buttonPressed(keyValues[screenViewState-1][1]); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}>{characterDisplay(keyValues[screenViewState-1][1])}</Text>
+               </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {buttonPressed(keyValues[screenViewState-1][2]); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}>{characterDisplay(keyValues[screenViewState-1][2])}</Text>
+               </View>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.rows}>
+              <TouchableOpacity style = {styles.buttonDesign}>
+                <View style={styles.buttonRows}>
+                  <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}></Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {buttonPressed(keyValues[screenViewState-1][3]); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                <View style={styles.buttonRows}>
+                  <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}>{characterDisplay(keyValues[screenViewState-1][3])}</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {buttonPressed(keyValues[screenViewState-1][4]); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+                <View style={styles.buttonRows}>
+                  <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}>{characterDisplay(keyValues[screenViewState-1][4])}</Text>
+                </View>
+              </TouchableOpacity>
+          </View>
+          <View style={styles.rows}>
+            <TouchableOpacity style = {styles.buttonDesign}>
+              <View style={styles.buttonRows}>
+                <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}></Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {buttonPressed(keyValues[screenViewState-1][0]); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={[styles.buttonText, {fontSize: 55, marginTop: 25}]}>{characterDisplay(keyValues[screenViewState-1][0])}</Text>
+               </View>
+            </TouchableOpacity>
+            <TouchableOpacity style = {styles.buttonDesign} onPress = {() => {handleBody(0); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}}>
+               <View style={styles.buttonRows}>
+                 <Text style={[styles.buttonText, {fontSize: 45, marginTop: 32}]}>Back</Text>
+               </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
+  }
+
+  return (
+    <View style={styles.container}>
+      <SafeAreaView style={styles.displayContainer}>
+       <Text style={{fontSize: 40,textAlign: 'center',color: 'white', marginRight: 10}}>{answerValue}</Text>
+      </SafeAreaView>
+      <SafeAreaView style={[styles.container, {marginBottom:0, justifyContent:'flex-start'}]} onPressIn={Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)}>
+        <ImageBackground
+            source={require("./assets/blackconc.jpg")}
+            resizeMode="cover"
+            style={styles.image}>
+
+         { twoTapBody() }
+
+         <View style={[styles.rows, {marginBottom: 40}]}>
+            <TouchableOpacity onPress={() => toggleCapsState()} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%", backgroundColor: getBackgroundColor(capsValue)}]}>
+             <View style={styles.buttonRows}>
+               <Text style={styles.buttonText}>Caps</Text>
+               <Text style={[styles.buttonText, {fontSize: 20}]}>mode</Text>
+             </View>
+            </TouchableOpacity>
+           <TouchableOpacity onPress={() => buttonPressed(" ")} onLongPress={() => buttonPressed(0)} style = {[styles.buttonDesign,{flex:3, width: "20%", height: "100%"}]}>
+            <View style={styles.buttonRows}>
+              <Text style={[styles.buttonText,{marginLeft: 10, padding:10}]}>0   ␣</Text>
+            </View>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => {buttonPressed("back"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} onLongPress={() => {buttonPressed("delAll"); Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);}} style = {[styles.buttonDesign, {flex:2, width: "20%", height: "100%"}]}>
+            <View style={styles.buttonRows}>
+              <Text style={styles.buttonText}>⌫</Text>
+            </View>
+           </TouchableOpacity>
+         </View>
+
+         <View style={[styles.rows, {marginBottom: 20}]}>
+           <TouchableOpacity onPress={() => navigation.navigate('optimalT9')} style={styles.switchButton}>
+             <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>OptimalT9</Text>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => navigation.navigate('originalT9')} style={styles.switchButton}>
+             <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>OriginalT9</Text>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => navigation.navigate('threeKey')} style={styles.switchButton}>
+             <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>3-Key</Text>
+           </TouchableOpacity>
+           <TouchableOpacity onPress={() => navigation.navigate('swipeTap')} style={styles.switchButton}>
+             <Text style={[styles.buttonText, {fontSize: 20, marginTop: 3}]}>Swipe</Text>
+           </TouchableOpacity>
+         </View>
+        </ImageBackground>
+    </SafeAreaView>
+
+    <StatusBar style="light-content" />
     </View>
   );
 }
@@ -941,6 +1169,7 @@ function App() {
         <Stack.Screen name="originalT9" component={OriginalT9} options={{ title: "originalT9", headerTitleAlign: "center" }} />
         <Stack.Screen name="threeKey" component={ThreeKey} options={{ title: "threeKey", headerTitleAlign: "center" }} />
         <Stack.Screen name="swipeTap" component={SwipeTap} options={{ title: "swipeTap", headerTitleAlign: "center" }} />
+        <Stack.Screen name="twoTap" component={TwoTap} options={{ title: "twoTap", headerTitleAlign: "center" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -1000,10 +1229,10 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     alignItems: "center",
     justifyContent: "space_between",
-    margin: 5,
+    margin: 3,
     width: buttonW,
     height: buttonH,
-    borderRadius: 40,
+    borderRadius: 30,
     borderWidth: 1,
     borderColor: "white",
   },
