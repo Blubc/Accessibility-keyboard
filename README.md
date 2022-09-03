@@ -34,7 +34,7 @@ This version adds haptic feedback and changes some things when the caps button i
 
 
 
-Version 1.4
+VERSION 1.4
 This version adds yet another design, TwoTap. This keyboard allows the user to press any key with exactly two taps.
 
 -Changed the type of touchable for row 4 to touchable opacity instead of the multitap library since touchable opacity provides better visual feedback.
@@ -44,3 +44,10 @@ TwoTap:
 Very similar layout to the optimalT9, a self proposed design where the concept involves allowing the user to type any character with two keypresses
 while still maintaining the 9 key design and does not require quick precise rapid taps like the other layouts.
 Tapping each key rebinds the same set of 9 keys but with the options from the first keypress, such that each press "opens" a menu.
+
+
+
+VERSION 1.5
+This version adds final fine tuning to the new design.
+
+-Adds the ability to add punctuation through a symbol menu, swapped some functions to make the keyboard more fluid.
