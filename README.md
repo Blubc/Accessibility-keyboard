@@ -1,4 +1,4 @@
-# Accessiblity-keyboard
+# Accessibility-keyboard
 Mobile keyboard with accessibility design for FYP
 
 VERSION 1.1 (After feature prototype)
